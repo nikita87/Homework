@@ -1,4 +1,4 @@
-package com.teachmeskills.rakhubovskiy.metoda.taskone;
+package com.teachmeskills.rakhubovskiy.metoda.task1;
 
 public class TaskOne {
     public static void main(String[] args) {
