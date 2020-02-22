@@ -24,7 +24,7 @@ repository for homework
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-
+.idea/
 .target/
 .out/
 .*iml/
