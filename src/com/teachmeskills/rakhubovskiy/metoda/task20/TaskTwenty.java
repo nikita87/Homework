@@ -18,6 +18,9 @@ public class TaskTwenty {
                     if ((wordInLetter[wordInLetter.length - 1] != ',') && (wordInLetter[wordInLetter.length - 1] != '.')) {
                         char lastLetterOfWord = wordInLetter[wordInLetter.length - 1];
                         System.out.print(lastLetterOfWord);
+                    } else {
+                        char lastLetterOfWord = wordInLetter[wordInLetter.length - 2];
+                        System.out.print(lastLetterOfWord);
                     }
                     break;
                 }
