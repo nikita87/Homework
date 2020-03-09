@@ -11,22 +11,17 @@ public class TaskTwenty {
 
         String str = "Строковый литерал — это последовательность символов, заключенных в двойные кавычки.";
 
-        String[] words = str.trim().split("\\s");
+        str = str.replaceAll("[^a-zA-Zа-яА-Я]", " ");
+        String[] words = str.trim().split("\\s+");
 
         for (int i = 0; i < words.length; i++){
-            char[] wordInLetter = words[i].toCharArray();
-            for (int j = 0; j < wordInLetter.length; j++){
-                if (wordInLetter[j] != '—') {
-                    if ((wordInLetter[wordInLetter.length - 1] != ',') && (wordInLetter[wordInLetter.length - 1] != '.')) {
-                        char lastLetterOfWord = wordInLetter[wordInLetter.length - 1];
-                        System.out.print(lastLetterOfWord);
-                    } else {
-                        char lastLetterOfWord = wordInLetter[wordInLetter.length - 2];
-                        System.out.print(lastLetterOfWord);
-                    }
-                    break;
-                }
+            char[] letterInWord = words[i].toCharArray();
+            for (int j = 0; j <letterInWord.length; j++){
+                char lastLetterInWord = letterInWord[letterInWord.length - 1];
+                System.out.print(lastLetterInWord);
+                break;
             }
         }
     }
 }
+
