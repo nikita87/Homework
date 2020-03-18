@@ -1,5 +1,5 @@
 package com.teachmeskills.rakhubovskiy.metoda.lesson9;
-
+@Version(versionOfClass = "1.1", codeNameVersion = "Nougat")
 public class MyService {
 
     private String field1;
