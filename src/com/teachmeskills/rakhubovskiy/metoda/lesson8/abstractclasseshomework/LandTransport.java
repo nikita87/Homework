@@ -1,6 +1,6 @@
 package com.teachmeskills.rakhubovskiy.metoda.lesson8.abstractclasseshomework;
 
-public abstract class LandTransport extends Transport{
+public class LandTransport extends Transport{
 
     private Integer amountOfWheels;
     private Double fuelConsumption; //расход топлива(л/100км)
@@ -19,5 +19,15 @@ public abstract class LandTransport extends Transport{
         return fuelConsumption;
     }
 
-    public abstract void description();
+    @Override
+    public void description() {
+        System.out.println("Марка = " + getBrand() + "\n" +
+            "Мощность двигателя(л.с.) = " + getEnginePower() + "\n" +
+            "Мощность двигателя(кВт) = " + powerEngineInKiloWatt() + "\n" +
+            "Максимальная скорость(км/ч) = " + getMaxSpeed() + "\n" +
+            "Масса(т) = " + getMass() + "\n" +
+            "Количество колес(шт.) = " + getAmountOfWheels() + "\n" +
+            "Расход топлива(л/100км) = " + getFuelConsumption());
+
+    }
 }

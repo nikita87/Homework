@@ -1,6 +1,6 @@
 package com.teachmeskills.rakhubovskiy.metoda.lesson8.abstractclasseshomework;
 
-public class Transport {
+public abstract class Transport {
 
     private String brand;
     private Integer enginePower; //мощность двигателя в л.с.
@@ -33,4 +33,6 @@ public class Transport {
     public Double powerEngineInKiloWatt(){
         return getEnginePower() * 0.74;
     }
+
+    public abstract void description();
 }

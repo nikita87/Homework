@@ -27,10 +27,10 @@ public class MyAnnotationAnalyzer {
         }
     }
 
-    static void analyzeClass(Class<?> Clazz) throws IllegalAccessException, InstantiationException, NoSuchFieldException, NoSuchMethodException {
-        if (Clazz.isAnnotationPresent(Version.class)){
+    static void analyzeClass(Class<?> сlazz) throws IllegalAccessException, InstantiationException, NoSuchFieldException, NoSuchMethodException {
+        if (сlazz.isAnnotationPresent(Version.class)){
 
-            Object objectClass = Clazz.newInstance();
+            Object objectClass = сlazz.newInstance();
 
             Field field = objectClass.getClass().getDeclaredField("field1");
             field.setAccessible(true);
