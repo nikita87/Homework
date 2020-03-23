@@ -9,5 +9,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Version {
     String versionOfClass();
-    String codeNameVersion() default "Nougat";
+    String versionCodeName() default "Nougat";
 }

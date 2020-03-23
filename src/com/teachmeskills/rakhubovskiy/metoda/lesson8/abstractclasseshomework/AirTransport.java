@@ -1,6 +1,6 @@
 package com.teachmeskills.rakhubovskiy.metoda.lesson8.abstractclasseshomework;
 
-public class AirTransport extends Transport {
+public abstract class AirTransport extends Transport {
 
     private Double spread; //размах крыльев(м)
     private  Integer minLengthOfRunaway; //минимальная длина взлетно-посадочной полосы для взлета(м)
@@ -21,14 +21,9 @@ public class AirTransport extends Transport {
     }
 
     @Override
-    public void description() {
-        System.out.println("Марка = " + getBrand() + "\n" +
-                "Мощность двигателя(л.с.) = " + getEnginePower() + "\n" +
-                "Мощность двигателя(кВт) = " + powerEngineInKiloWatt() + "\n" +
-                "Максимальная скорость(км/ч) = " + getMaxSpeed() + "\n" +
-                "Масса(т) = " + getMass() + "\n" +
+    public String description() {
+        return super.description() + "\n" +
                 "Размах крыльев(м) = " + getSpread() + "\n" +
-                "Минимальная длина ВПП(м) = " + getMinLengthOfRunaway() + "\n");
-
+                "Минимальная длина ВПП(м) = " + getMinLengthOfRunaway();
     }
 }

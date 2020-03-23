@@ -1,4 +1,4 @@
-package by.teachmeskills.rakhubovskiy.doplessons.lesson8.abstractclasseshomework;
+package com.teachmeskills.rakhubovskiy.metoda.lesson8.abstractclasseshomework;
 
 /*
 Разработать иерархию классов подобную схеме:
@@ -65,12 +65,12 @@ public class TransportRunner {
         AirPassengerTransport airbusA320 = new AirPassengerTransport("Airbus A320", 200, 840, 77.0, 34.1, 2090, 180, true);
         AirMilitaryTransport su35 = new AirMilitaryTransport("Су-35", 3000,1400,25.3,14.75,450, true,150);
 
-        audi80.description();
+        System.out.println(audi80.description());
         audi80.calculationMaxWay(2.5);
 
         System.out.println("******************************************************************************************");
 
-        maz5516.description();
+        System.out.println(maz5516.description());
         System.out.print("Введите кол-во груза, которое вы хотите загрузить(в тоннах):");
         String needWeightStr = sc.nextLine();
         int needWeight = Integer.parseInt(needWeightStr);
@@ -78,7 +78,7 @@ public class TransportRunner {
 
         System.out.println("******************************************************************************************");
 
-        airbusA320.description();
+        System.out.println(airbusA320.description());
         System.out.print("Введите кол-во пассажиров, которое нужно посадить на борт:");
         String needAmounOfPassengerStr = sc.nextLine();
         int needAmounOfPassenger = Integer.parseInt(needAmounOfPassengerStr);
@@ -86,7 +86,7 @@ public class TransportRunner {
 
         System.out.println("******************************************************************************************");
 
-        su35.description();
+        System.out.println(su35.description());
         su35.shoot();
         su35.baleOut();
 
