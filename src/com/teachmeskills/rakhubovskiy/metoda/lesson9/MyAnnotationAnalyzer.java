@@ -10,37 +10,35 @@ package com.teachmeskills.rakhubovskiy.metoda.lesson9;
 */
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 public class MyAnnotationAnalyzer {
 
     public static void main(String[] args) throws InstantiationException, IllegalAccessException, NoSuchFieldException, NoSuchMethodException {
         try {
             analyzeClass(MyService.class);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
+        } catch (IllegalAccessException | InstantiationException | NoSuchMethodException | InvocationTargetException e) {
             e.printStackTrace();
         }
     }
 
-    static void analyzeClass(Class<?> сlazz) throws IllegalAccessException, InstantiationException, NoSuchFieldException, NoSuchMethodException {
+    static void analyzeClass(Class<?> сlazz) throws IllegalAccessException, InstantiationException, NoSuchFieldException, NoSuchMethodException, InvocationTargetException {
         if (сlazz.isAnnotationPresent(Version.class)){
 
             Object objectClass = сlazz.newInstance();
 
             Field field = objectClass.getClass().getDeclaredField("field1");
             field.setAccessible(true);
-            field.set(objectClass, "set value field1");
+            field.set(objectClass, "value1");
 
             field = objectClass.getClass().getDeclaredField("field2");
             field.setAccessible(true);
-            field.set(objectClass, "set value field2");
+            field.set(objectClass, "value2");
 
-            objectClass.getClass().getDeclaredMethod("thisClassInfo");
+            Method method = objectClass.getClass().getDeclaredMethod("thisClassInfo");
+            method.setAccessible(true);
+            method.invoke(objectClass);
         }
     }
 }

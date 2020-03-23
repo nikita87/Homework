@@ -13,17 +13,11 @@ public class LandCargoTransport extends LandTransport {
         return carryingCapacity;
     }
 
-
     @Override
-    public void description() {
-        System.out.println("Марка = " + getBrand() + "\n" +
-            "Мощность двигателя(л.с.) = " + getEnginePower() + "\n" +
-            "Мощность двигателя(кВт) = " + powerEngineInKiloWatt() + "\n" +
-            "Максимальная скорость(км/ч) = " + getMaxSpeed() + "\n" +
-            "Масса(т) = " + getMass() + "\n" +
-            "Количество колес(шт.) = " + getAmountOfWheels() + "\n" +
-            "Расход топлива(л/100км) = " + getFuelConsumption() + "\n" +
-            "Грузоподъемность(т) = " + getCarryingCapacity());
+    public String description() {
+        return super.description() + "\n" +
+                "Расход топлива(л/100км) = " + getFuelConsumption() + "\n" +
+                "Грузоподъемность(т) = " + getCarryingCapacity();
     }
 
     public void isLoading(int cargoWeight){
