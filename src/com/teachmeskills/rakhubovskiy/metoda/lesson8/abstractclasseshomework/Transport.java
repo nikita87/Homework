@@ -34,5 +34,12 @@ public abstract class Transport {
         return getEnginePower() * 0.74;
     }
 
-    public abstract void description();
+    public String description() {
+        String s = "Марка = " + getBrand() + "\n" +
+                "Мощность двигателя(л.с.) = " + getEnginePower() + "\n" +
+                "Мощность двигателя(кВт) = " + powerEngineInKiloWatt() + "\n" +
+                "Максимальная скорость(км/ч) = " + getMaxSpeed() + "\n" +
+                "Масса(т) = " + getMass();
+        return s;
+    }
 }

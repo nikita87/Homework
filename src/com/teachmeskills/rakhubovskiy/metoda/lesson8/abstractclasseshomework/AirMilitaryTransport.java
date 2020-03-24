@@ -20,16 +20,10 @@ public class AirMilitaryTransport extends AirTransport {
     }
 
     @Override
-    public void description() {
-        System.out.println("Марка = " + getBrand() + "\n" +
-            "Мощность двигателя(л.с.) = " + getEnginePower() + "\n" +
-            "Мощность двигателя(кВт) = " + powerEngineInKiloWatt() + "\n" +
-            "Максимальная скорость(км/ч) = " + getMaxSpeed() + "\n" +
-            "Масса(т) = " + getMass() + "\n" +
-            "Размах крыльев(м) = " + getSpread() + "\n" +
-            "Минимальная длина ВПП(м) = " + getMinLengthOfRunaway() + "\n" +
-            "Наличие системы катапультирования = " + getCatapult() + "\n" +
-            "Количество ракет на борту(шт.) = " + getAmountOfMissiles());
+    public String description() {
+        return super.description() + "\n" +
+                "Наличие системы катапультирования = " + getCatapult() + "\n" +
+                "Количество ракет на борту(шт.) = " + getAmountOfMissiles();
     }
 
     public void shoot(){

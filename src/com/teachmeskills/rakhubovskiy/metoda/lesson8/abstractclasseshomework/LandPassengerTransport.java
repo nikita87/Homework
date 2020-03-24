@@ -20,21 +20,15 @@ public class LandPassengerTransport extends LandTransport {
     }
 
     @Override
-    public void description() {
-        System.out.println("Марка = " + getBrand() + "\n" +
-            "Мощность двигателя(л.с.) = " + getEnginePower() + "\n" +
-            "Мощность двигателя(кВт) = " + powerEngineInKiloWatt() + "\n" +
-            "Максимальная скорость(км/ч) = " + getMaxSpeed() + "\n" +
-            "Масса(т) = " + getMass() + "\n" +
-            "Количество колес(шт.) = " + getAmountOfWheels() + "\n" +
-            "Расход топлива(л/100км) = " + getFuelConsumption() + "\n" +
-            "Тип кузова = " + getBodyType() + "\n" +
-            "Количество пассажиров = " + getAmountOfPassenger());
+    public String description() {
+        return super.description() + "\n" +
+                "Тип кузова = " + getBodyType() + "\n" +
+                "Количество пассажиров = " + getAmountOfPassenger();
     }
 
     public void calculationMaxWay(double hours){
         double maxWay = getMaxSpeed() * hours;
-        System.out.println("За время " + hours + "ч. автомобиль" + getBrand() + ", двигаясь с максимальной скоростью " +
+        System.out.println("За время " + hours + " ч. автомобиль " + getBrand() + ", двигаясь с максимальной скоростью " +
                 getMaxSpeed() + " км/ч проедет " + maxWay + " км и израсходует " + calculationFuelConsumptionDuringMaxWay(maxWay) + " л. топлива." );
     }
 
