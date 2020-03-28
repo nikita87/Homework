@@ -5,11 +5,13 @@ public class Product {
     private Integer id;
     private String productName;
     private Double price;
+    private static Integer currentId = 1;
 
     public Product(String productName, Double price) {
-        this.id = AutoIncrement.nextId();
+        this.id = currentId;
         this.productName = productName;
         this.price = price;
+        Product.currentId++;
     }
 
     public Integer getId() {

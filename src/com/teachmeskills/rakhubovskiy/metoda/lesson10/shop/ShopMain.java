@@ -108,11 +108,11 @@ public class ShopMain {
                     break;
                 case 4:
                     myShop.sortProductListByPrice();
-                    System.out.println("Товара отсортирован по цене!");
+                    System.out.println("Товар отсортирован по цене!");
                     break;
                 case 5:
                     myShop.sortProductListonById();
-                    System.out.println("Товара отсортирован в порядке добавления!");
+                    System.out.println("Товар отсортирован в порядке добавления!");
                     break;
                 case 6:
                     System.out.println("Введите id товара:");
