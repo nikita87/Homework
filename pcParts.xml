@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Devices>
+    <Part>
+        <Name>motherboard</Name>
+        <Origin>Taiwan</Origin>
+        <Price>78</Price>
+        <Type>integrated</Type>
+        <EnergyConsumption>5W</EnergyConsumption>
+        <Cooler>no</Cooler>
+        <GroupParts>parts</GroupParts>
+        <Port>AM4</Port>
+        <Critical>yes</Critical>
+    </Part>
+    <Part>
+        <Name>graphics card</Name>
+        <Origin>USA</Origin>
+        <Price>305</Price>
+        <Type>discrete</Type>
+        <EnergyConsumption>20W</EnergyConsumption>
+        <Cooler>yes</Cooler>
+        <GroupParts>parts</GroupParts>
+        <Port>PCI</Port>
+        <Critical>yes</Critical>
+    </Part>
+    <Part>
+        <Name>RAM</Name>
+        <Origin>South Korea</Origin>
+        <Price>47</Price>
+        <Type>discrete</Type>
+        <EnergyConsumption>5W</EnergyConsumption>
+        <Cooler>no</Cooler>
+        <GroupParts>parts</GroupParts>
+        <Port>PCI</Port>
+        <Critical>yes</Critical>
+    </Part>
+    <Part>
+        <Name>keyboard</Name>
+        <Origin>China</Origin>
+        <Price>68</Price>
+        <Type>peripheral</Type>
+        <EnergyConsumption>5W</EnergyConsumption>
+        <Cooler>no</Cooler>
+        <GroupParts>manipulator</GroupParts>
+        <Port>USB</Port>
+        <Critical>no</Critical>
+    </Part>
+</Devices>
+
+
+
