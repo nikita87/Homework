@@ -21,6 +21,5 @@ public class SerializationReader {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
     }
 }

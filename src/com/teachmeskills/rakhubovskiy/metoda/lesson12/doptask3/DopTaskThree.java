@@ -23,59 +23,58 @@ public class DopTaskThree {
 
         FileReader fileReaderText, fileReaderBlackList;
 
-        try {
-            fileReaderText = new FileReader("fileDopTask3.txt");
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found");
-            return;
-        }
+        try (BufferedReader brText = new BufferedReader(fileReaderText = new FileReader("fileDopTask3.txt"))) {
 
-        BufferedReader brText = new BufferedReader(fileReaderText);
+            String lineText, lineBlackList;
+            int countBlackListLines = 0;
 
-        String lineText, lineBlackList;
-        int countBlackListLines = 0;
+            while ((lineText = brText.readLine()) != null) {
 
-        while ((lineText = brText.readLine())!= null){
+                boolean isBlackListLine = false;
 
-            boolean isBlackListLine = false;
+                String line = lineText.replaceAll("[^a-zA-Z]", " ");
+                String[] words = line.trim().split("\\s+");
 
-            String line = lineText.replaceAll("[^a-zA-Z]", " ");
-            String[] words = line.trim().split("\\s+");
+                for (int i = 0; i < words.length; i++) {
 
-            for (int i = 0; i < words.length; i++){
+                    try (BufferedReader brBlackList = new BufferedReader(fileReaderBlackList = new FileReader("fileDopTask3_blacklist.txt"))) {
 
-                try {
-                    fileReaderBlackList = new FileReader(("fileDopTask3_blacklist.txt"));
-                } catch (FileNotFoundException e) {
-                    System.out.println("Blacklist not found");
-                    return;
-                }
+                        while ((lineBlackList = brBlackList.readLine()) != null) {
+                            if (words[i].equals(lineBlackList)) {
+                                countBlackListLines++;
+                                isBlackListLine = true;
+                                break;
+                            }
+                        }
 
-                BufferedReader brBlackList = new BufferedReader(fileReaderBlackList);
+                    } catch (FileNotFoundException e) {
+                        System.out.println("Blacklist not found");
+                        return;
+                    }
 
-                while ((lineBlackList = brBlackList.readLine()) != null){
-                    if(words[i].equals(lineBlackList)){
-                        countBlackListLines++;
-                        isBlackListLine = true;
+                    if (isBlackListLine == true) { //если хотя бы одно слово попадает в blacklist, то сразу выходим из цикла for
                         break;
                     }
                 }
-                fileReaderBlackList.close();
-                if (isBlackListLine == true){ //если хотя бы одно слово попадает в blacklist, то сразу выходим из цикла for
-                    break;
+
+                if (isBlackListLine == true) {
+                    System.out.println(lineText);
                 }
             }
-            if (isBlackListLine == true){
-                System.out.println(lineText);
+
+            if (countBlackListLines > 0) {
+                System.out.println("\n" + "The text was not censored!");
+                System.out.println("Number of uncensored offers: " + countBlackListLines);
+            } else {
+                System.out.println("Success! The text censored!");
             }
+
+        } catch(FileNotFoundException e){
+            System.out.println("File not found");
+            return;
         }
-        if (countBlackListLines > 0){
-            System.out.println("\n" + "The text was not censored!");
-            System.out.println("Number of uncensored offers: " + countBlackListLines);
-        } else {
-            System.out.println("Success! The text censored!");
-        }
-        fileReaderText.close();
     }
 }
+
+
 

@@ -26,38 +26,33 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         FileReader fileReader;
-        try {
-            fileReader = new FileReader("fileDopTask2.txt");
+        FileWriter fileWriter;
+
+        try (BufferedReader br = new BufferedReader(fileReader = new FileReader("fileDopTask2.txt"));
+             BufferedWriter bw = new BufferedWriter( fileWriter = new FileWriter("fileDopTask2New.txt"))) {
+
+            String line;
+            int countWordsInLine;
+            boolean isPalindromInLine;
+
+            while ((line = br.readLine()) != null) {
+                Matcher matcher = Pattern.compile("[^.!?]+[.!?]").matcher(line);
+                while (matcher.find()) {
+                    String str = matcher.group().trim();
+                    countWordsInLine = TextFormatter.getCountWordsLine(str);
+                    isPalindromInLine = TextFormatter.getLineWithPalindrom(str);
+                    if (((countWordsInLine >= 3) && (countWordsInLine <= 5)) || (isPalindromInLine == true)){
+                        bw.write(str + "\n");
+                    }
+                }
+            }
+
+            bw.flush();
+
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
             return;
         }
-
-        FileWriter fileWriter;
-        fileWriter = new FileWriter("fileDopTask2New.txt");
-
-        BufferedWriter bw = new BufferedWriter(fileWriter);
-        BufferedReader br = new BufferedReader(fileReader);
-
-        String line;
-        int countWordsInLine;
-        boolean isPalindromInLine;
-
-        while ((line = br.readLine()) != null) {
-            Matcher matcher = Pattern.compile("[^.!?]+[.!?]").matcher(line);
-            while (matcher.find()) {
-                String str = matcher.group().trim();
-                countWordsInLine = TextFormatter.getCountWordsLine(str);
-                isPalindromInLine = TextFormatter.getLineWithPalindrom(str);
-                if (((countWordsInLine >= 3) && (countWordsInLine <= 5)) || (isPalindromInLine == true)){
-                    bw.write(str + "\n");
-                }
-            }
-        }
-
-        bw.flush();
-        fileReader.close();
-        fileWriter.close();
     }
 }
 

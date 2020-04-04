@@ -1,10 +1,14 @@
 package com.teachmeskills.rakhubovskiy.metoda.lesson12.doptask2;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class TextFormatter {
 
     public static int getCountWordsLine(String str){
-        str = str.replaceAll("[^a-zA-Zа-яА-Я]", " ");
+        str = str.replaceAll("[^a-zA-Zа-яА-Я-]", " ");
         int words = str.split("\\s+").length;
+
         return words;
     }
 
