@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Devices>
+    <Part code="258964">
+        <Name>motherboard</Name>
+        <Origin>Taiwan</Origin>
+        <ProductionNumber>FA225658</ProductionNumber>
+        <Price>78</Price>
+        <Type>
+            <EnergyConsumption>5</EnergyConsumption>
+            <Cooler>false</Cooler>
+            <GroupParts>parts</GroupParts>
+            <Port>AM4</Port>
+        </Type>
+        <Critical>yes</Critical>
+    </Part>
+    <Part code="123544">
+        <Name>graphics card</Name>
+        <Origin>USA</Origin>
+        <ProductionNumber>GA258658</ProductionNumber>
+        <Price>305</Price>
+        <Type>
+            <EnergyConsumption>20</EnergyConsumption>
+            <Cooler>true</Cooler>
+            <GroupParts>parts</GroupParts>
+            <Port>PCI</Port>
+        </Type>
+        <Critical>yes</Critical>
+    </Part>
+    <Part code="365987">
+        <Name>RAM</Name>
+        <Origin>South Korea</Origin>
+        <ProductionNumber>HA225858</ProductionNumber>
+        <Price>47</Price>
+        <Type>
+            <EnergyConsumption>5</EnergyConsumption>
+            <Cooler>false</Cooler>
+            <GroupParts>parts</GroupParts>
+            <Port>PCI</Port>
+        </Type>
+        <Critical>yes</Critical>
+    </Part>
+    <Part code="456789">
+        <Name>keyboard</Name>
+        <Origin>China</Origin>
+        <ProductionNumber>JA252368</ProductionNumber>
+        <Price>68</Price>
+        <Type>
+            <EnergyConsumption>5</EnergyConsumption>
+            <Cooler>false</Cooler>
+            <GroupParts>manipulator</GroupParts>
+            <Port>USB</Port>
+        </Type>
+        <Critical>no</Critical>
+    </Part>
+</Devices>
+
+
+

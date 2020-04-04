@@ -10,6 +10,8 @@ import javax.xml.validation.Validator;
 import java.io.File;
 import java.io.IOException;
 
+import static javax.xml.XMLConstants.W3C_XML_SCHEMA_NS_URI;
+
 public class XSDValidator {
     public static void main(String[] args) {
         boolean answer = validateXMLSchema("pcParts.xsd", "pcParts.xml");
@@ -18,7 +20,7 @@ public class XSDValidator {
 
     public static boolean validateXMLSchema(String xsdPath, String xmlPath) {
         try{
-            SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_INSTANCE_NS_URI);
+            SchemaFactory factory = SchemaFactory.newInstance(W3C_XML_SCHEMA_NS_URI);
             Schema schema = factory.newSchema(new File(xsdPath));
             Validator validator = schema.newValidator();
             validator.validate(new StreamSource(new File(xmlPath)));
