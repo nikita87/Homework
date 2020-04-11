@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="Devices">
+        <xs:complexType>
+            <xs:sequence>
+
+                <xs:element name="Part" maxOccurs="unbounded" minOccurs="1">
+                    <xs:complexType>
+
+                        <xs:sequence>
+                            <xs:element name="Name">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="40"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
+                            <xs:element name="Origin">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="40"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
+                            <xs:element name="ProductionNumber">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:ID">
+                                        <xs:pattern value="[A-Z]{2}[0-9]{6}"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
+                            <xs:element name="Price">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:int">
+                                        <xs:totalDigits value="4"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
+                            <xs:element name="Type" maxOccurs="unbounded" minOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="EnergyConsumption">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:int">
+                                                    <xs:totalDigits value="3"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+
+                                        <xs:element name="Cooler">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:boolean"/>
+                                            </xs:simpleType>
+                                        </xs:element>
+
+                                        <xs:element name="GroupParts">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="40"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+
+                                        <xs:element name="Port">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="3"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+
+                                </xs:complexType>
+                            </xs:element>
+
+                            <xs:element name="Critical">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="3"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+
+                        <xs:attribute name="code">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:integer">
+                                    <xs:totalDigits value="6"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
